@@ -19,7 +19,7 @@ const Layout = () => {
 
 export default Layout;
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   margin-top: 50px;
   margin-right: 30px;
   display: flex;
@@ -29,19 +29,23 @@ const Wrapper = styled.div`
 `;
 
 //전체 레이아웃
-const Container = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: flex-start;
   width: 100%;
   height: 100%;
   border: 1px solid black;
 `;
 
 //그래프 레이아웃
-const Container2 = styled.div`
+export const Container2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 1800px;
-  height: 800px;
+  height: 100%;
   border: 1px solid black;
   margin: 80px;
 `;

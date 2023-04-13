@@ -40,6 +40,8 @@ const Container = styled.div`
 
 //그래프 레이아웃
 const Container2 = styled.div`
+  /* display: flex;
+  flex-direction: row; */
   width: 1800px;
   height: 800px;
   border: 1px solid black;
