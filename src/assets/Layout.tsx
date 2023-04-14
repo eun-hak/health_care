@@ -36,6 +36,9 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
   border: 1px solid black;
+  background: #a7d4ee;
+  border-radius: 16px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04);
 `;
 
 //그래프 레이아웃
@@ -48,4 +51,6 @@ export const Container2 = styled.div`
   height: 100%;
   border: 1px solid black;
   margin: 80px;
+  background: white;
+  border-radius: 16px;
 `;
