@@ -5,13 +5,17 @@ import Signiture from "../components/Signiture";
 import { Container, Wrapper, Container2 } from "../assets/Layout";
 import { MdAdd } from "react-icons/md";
 import Create from "../components/Create";
+import List from "../components/List";
 
 const Volume = (): JSX.Element => {
   return (
     <>
       <Container>
         <Container2>
-          <Create></Create>
+          <TodoTemplateBlock>
+            <List></List>
+            <Create></Create>
+          </TodoTemplateBlock>
         </Container2>
 
         <Wrapper>
@@ -24,3 +28,20 @@ const Volume = (): JSX.Element => {
 };
 
 export default Volume;
+
+const TodoTemplateBlock = styled.div`
+  width: 744px;
+  height: 768px;
+
+  position: relative; /* 추후 박스 하단에 추가 버튼을 위치시키기 위한 설정 */
+  background: #a7d4ee;
+  border-radius: 16px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04);
+
+  margin: 0 auto; /* 페이지 중앙에 나타나도록 설정 */
+
+  margin-top: 96px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+`;
