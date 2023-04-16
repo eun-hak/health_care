@@ -7,7 +7,7 @@ import { MdAdd } from "react-icons/md";
 import Create from "../components/Create";
 import List from "../components/List";
 
-const Volume = (): JSX.Element => {
+const Volume = () => {
   return (
     <>
       <Container>

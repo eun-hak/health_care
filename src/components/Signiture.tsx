@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Signiture = (): JSX.Element => {
+const Signiture = () => {
   return (
     <>
       <Wrapper>Eun_hak</Wrapper>

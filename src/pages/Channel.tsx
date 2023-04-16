@@ -12,7 +12,7 @@ interface DATA {
   link: string;
   src: string;
 }
-const Channel = (): JSX.Element => {
+const Channel = () => {
   return (
     <>
       <Container>

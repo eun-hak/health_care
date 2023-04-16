@@ -1,7 +1,8 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { MdDone, MdDelete } from "react-icons/md";
-
+import { ITypes, todosState } from "../recoil/State";
+import { useRecoilState } from "recoil";
 type WorkItem = {
   id: number;
   done: boolean;
@@ -12,12 +13,24 @@ type WorkProps = WorkItem & {
   // Remove 'children' prop
   // children?: never[];
 };
-const Work = ({ id, done, text }: WorkProps): JSX.Element => {
+
+const Work = ({ id, done, text }: WorkProps) => {
+  const [work, setWork] = useRecoilState<ITypes[]>(todosState);
+
+  // const onDelete = (id: number) => {
+  //   setWork(work.filter((work: ITypes) => work.id !== id));
+  // };
+
+  const onDelete = (event: React.MouseEvent<HTMLDivElement>) => {
+    const id = Number(event.currentTarget.getAttribute("data-id"));
+    setWork(work.filter((work: ITypes) => work.id !== id));
+  };
+
   return (
     <TodoItemBlock>
       <CheckCircle done={done}>{done && <MdDone />}</CheckCircle>
       <Text done={done}>{text}</Text>
-      <Remove>
+      <Remove onClick={onDelete} data-id={id}>
         <MdDelete />
       </Remove>
     </TodoItemBlock>
