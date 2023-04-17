@@ -3,13 +3,14 @@ import styled, { css } from "styled-components";
 import { MdDone, MdDelete } from "react-icons/md";
 import { ITypes, todosState } from "../recoil/State";
 import { useRecoilState } from "recoil";
-type WorkItem = {
+export type WorkItem = {
   id: number;
   done: boolean;
   text: string;
 };
 
-type WorkProps = WorkItem & {
+//약간 헷갈리네요
+export type WorkProps = WorkItem & {
   // Remove 'children' prop
   // children?: never[];
 };
@@ -20,7 +21,7 @@ const Work = ({ id, done, text }: WorkProps) => {
   // const onDelete = (id: number) => {
   //   setWork(work.filter((work: ITypes) => work.id !== id));
   // };
-
+  // ####헷갈림###
   const onDelete = (event: React.MouseEvent<HTMLDivElement>) => {
     const id = Number(event.currentTarget.getAttribute("data-id"));
     setWork(work.filter((work: ITypes) => work.id !== id));
@@ -87,7 +88,7 @@ const Text = styled.div<{ done: boolean }>`
   flex: 1;
   font-weight: 700;
   font-size: 29px;
-  color: #495057;
+  color: purple;
   ${(props) =>
     props.done &&
     css`

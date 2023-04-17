@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-const Nav = (): JSX.Element => {
+const Nav = () => {
   const [navbarStyle, setNavbarStyle] = useState<React.CSSProperties>({});
 
   useEffect(() => {

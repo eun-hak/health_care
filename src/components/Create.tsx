@@ -5,16 +5,14 @@ import { MdAdd } from "react-icons/md";
 import { useRecoilState } from "recoil";
 import { ITypes, todosState } from "../recoil/State";
 
-const Create = (): JSX.Element => {
+const Create = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [work, setWork] = useRecoilState<ITypes[]>(todosState);
 
   const onToggle = () => setOpen(!open);
 
   const onCreate = () => {};
-  const onDelete = (id: number) => {
-    setWork(work.filter((work: ITypes) => work.id !== id));
-  };
+
   return (
     <>
       {/* <TodoTemplateBlock> */}

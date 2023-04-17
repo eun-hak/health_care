@@ -12,13 +12,13 @@ const mockCredentials: Credentials = {
   password: "a",
 };
 const LoginForm = () => {
-  
-
   const navigate = useNavigate();
+
   const [credentials, setCredentials] = useState<Credentials>({
     id: "",
     password: "",
   });
+
   const [error, setError] = useState<string>("");
 
   const handleChange = (
@@ -31,7 +31,7 @@ const LoginForm = () => {
   const handleClick = () => {
     navigate("/Profile");
   };
-  
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (
@@ -75,10 +75,7 @@ const LoginForm = () => {
 
 export default LoginForm;
 
-const Title = styled.div`
-  
-
-`
+const Title = styled.div``;
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;

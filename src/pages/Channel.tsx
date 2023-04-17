@@ -4,14 +4,14 @@ import Nav from "../components/Nav";
 import Signiture from "../components/Signiture";
 import { Container, Wrapper, Container2 } from "../assets/Layout";
 import Data from "../assets/Data";
-
-interface DATA {
-  id: number;
-  name: string;
-  content: string;
-  link: string;
-  src: string;
-}
+import { DATA } from "../assets/Data";
+// type DATA = {
+//   id: number;
+//   name: string;
+//   content: string;
+//   link: string;
+//   src: string;
+// }
 const Channel = () => {
   return (
     <>

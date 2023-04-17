@@ -1,12 +1,12 @@
 import React from "react";
 
-interface DATA {
+export type DATA = {
   id: number;
   name: string;
   content: string;
   link: string;
   src: string;
-}
+};
 
 const Data: DATA[] = [
   {

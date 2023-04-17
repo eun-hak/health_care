@@ -10,7 +10,7 @@ const TodoListBlock = styled.div`
   padding-bottom: 48px;
 `;
 
-const List = (): JSX.Element => {
+const List = () => {
   const [work, setWork] = useRecoilState<ITypes[]>(todosState);
   return (
     <>
