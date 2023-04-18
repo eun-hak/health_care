@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { MdDone, MdDelete } from "react-icons/md";
-import { ITypes, todosState } from "../recoil/State";
+import { ITypes, workState } from "../recoil/State";
 import { useRecoilState } from "recoil";
 export type WorkItem = {
   id: number;
@@ -16,20 +16,29 @@ export type WorkProps = WorkItem & {
 };
 
 const Work = ({ id, done, text }: WorkProps) => {
-  const [work, setWork] = useRecoilState<ITypes[]>(todosState);
+  const [work, setWork] = useRecoilState<ITypes[]>(workState);
 
   // const onDelete = (id: number) => {
   //   setWork(work.filter((work: ITypes) => work.id !== id));
   // };
   // ####헷갈림###
-  const onDelete = (event: React.MouseEvent<HTMLDivElement>) => {
-    const id = Number(event.currentTarget.getAttribute("data-id"));
+  const onDelete = () => {
     setWork(work.filter((work: ITypes) => work.id !== id));
+  };
+
+  const onToggle = () => {
+    setWork(
+      work.map((work: ITypes) =>
+        work.id === id ? { ...work, done: !work.done } : work
+      )
+    );
   };
 
   return (
     <TodoItemBlock>
-      <CheckCircle done={done}>{done && <MdDone />}</CheckCircle>
+      <CheckCircle done={done} onClick={onToggle}>
+        {done && <MdDone />}
+      </CheckCircle>
       <Text done={done}>{text}</Text>
       <Remove onClick={onDelete} data-id={id}>
         <MdDelete />

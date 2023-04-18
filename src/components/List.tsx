@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import Work from "./Work";
-import { ITypes, todosState } from "../recoil/State";
+import { ITypes, workState } from "../recoil/State";
 import { useRecoilState } from "recoil";
 
 const TodoListBlock = styled.div`
@@ -11,7 +11,7 @@ const TodoListBlock = styled.div`
 `;
 
 const List = () => {
-  const [work, setWork] = useRecoilState<ITypes[]>(todosState);
+  const [work, setWork] = useRecoilState<ITypes[]>(workState);
   return (
     <>
       <TodoListBlock>

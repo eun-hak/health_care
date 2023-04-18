@@ -13,14 +13,14 @@ export const inputState = atom<string>({
   default: "",
 });
 
-export const todosState = atom<ITypes[]>({
+export const workState = atom<ITypes[]>({
   key: "work",
 
   default: [
     {
       id: 1,
       text: "데드리프트 / 140kg / 5x5",
-      done: false,
+      done: true,
     },
 
     {

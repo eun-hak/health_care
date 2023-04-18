@@ -3,11 +3,11 @@ import styled, { css } from "styled-components";
 import { Container, Wrapper, Container2 } from "../assets/Layout";
 import { MdAdd } from "react-icons/md";
 import { useRecoilState } from "recoil";
-import { ITypes, todosState } from "../recoil/State";
+import { ITypes, workState } from "../recoil/State";
 
 const Create = () => {
   const [open, setOpen] = useState<boolean>(false);
-  const [work, setWork] = useRecoilState<ITypes[]>(todosState);
+  const [work, setWork] = useRecoilState<ITypes[]>(workState);
 
   const onToggle = () => setOpen(!open);
 
