@@ -1,27 +1,42 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
-import { Container, Wrapper, Container2 } from "../assets/Layout";
+import { Container, Wrapper, Container2 } from "./Layout";
 import { MdAdd } from "react-icons/md";
 import { useRecoilState } from "recoil";
-import { ITypes, workState } from "../recoil/State";
+import { ITypes, inputId, workState } from "../recoil/State";
 
 const Create = () => {
-  const [open, setOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState(false); //<boolean> 타입추론
+  const [value, setValue] = useState("");
   const [work, setWork] = useRecoilState<ITypes[]>(workState);
-
+  const [nextId, setNextId] = useRecoilState(inputId);
   const onToggle = () => setOpen(!open);
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  };
 
-  const onCreate = () => {};
+  const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const newItem = {
+      id: nextId,
+      text: value,
+      done: false,
+    };
+    setWork([...work, newItem]);
+    setNextId(nextId + 1);
+  };
 
   return (
     <>
       {/* <TodoTemplateBlock> */}
       {open && (
         <InsertFormPositioner>
-          <InsertForm>
+          <InsertForm onSubmit={onSubmit}>
             <Input
               autoFocus
               placeholder="운동명 / 무게 / 세트수 형태로 입력해주세요"
+              value={value}
+              onChange={onChange}
             />
           </InsertForm>
         </InsertFormPositioner>

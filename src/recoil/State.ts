@@ -8,9 +8,9 @@ export type ITypes = {
 };
 
 // TodoInput에서 입력하는 값을 atom으로 관리하는 방식
-export const inputState = atom<string>({
-  key: "inputState",
-  default: "",
+export const inputId = atom({
+  key: "id",
+  default: 4,
 });
 
 export const workState = atom<ITypes[]>({

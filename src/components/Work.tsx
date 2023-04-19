@@ -9,19 +9,9 @@ export type WorkItem = {
   text: string;
 };
 
-//약간 헷갈리네요
-export type WorkProps = WorkItem & {
-  // Remove 'children' prop
-  // children?: never[];
-};
-
-const Work = ({ id, done, text }: WorkProps) => {
+const Work = ({ id, done, text }: WorkItem) => {
   const [work, setWork] = useRecoilState<ITypes[]>(workState);
 
-  // const onDelete = (id: number) => {
-  //   setWork(work.filter((work: ITypes) => work.id !== id));
-  // };
-  // ####헷갈림###
   const onDelete = () => {
     setWork(work.filter((work: ITypes) => work.id !== id));
   };
