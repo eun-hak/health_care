@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { CALENDER, CHANNEL, INBODY, PROFILE, VOLUME } from "../const/URL";
 
 const Nav = () => {
   const [navbarStyle, setNavbarStyle] = useState<React.CSSProperties>({});
@@ -24,11 +25,11 @@ const Nav = () => {
   return (
     <>
       <NavWrapper style={{ ...navbarStyle }}>
-        <Nava href="/Profile">프로필</Nava>
-        <Nava href="/Calende">운동 일정</Nava>
-        <Nava href="/Volume">운동 볼륨</Nava>
-        <Nava href="/Channel">운동 채널</Nava>
-        <Nava href="/Inbody">인바디 등록</Nava>
+        <Nava href={PROFILE}>프로필</Nava>
+        <Nava href={CALENDER}>운동 일정</Nava>
+        <Nava href={VOLUME}>운동 볼륨</Nava>
+        <Nava href={CHANNEL}>운동 채널</Nava>
+        <Nava href={INBODY}>인바디 등록</Nava>
       </NavWrapper>
     </>
   );
