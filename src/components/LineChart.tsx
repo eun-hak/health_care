@@ -2,7 +2,6 @@ import { ResponsiveLine } from "@nivo/line";
 import { AxisProps } from "@nivo/axes";
 
 import { ScaleLinear } from "d3-scale"; // ScaleLinear 를 import 해줍니다.
-import { ChartData } from "../const/ChartData";
 import { ChartDataType } from "../const/ChartData";
 
 const LIneChart = ({ data }: { data: ChartDataType[] }) => (
@@ -26,7 +25,7 @@ const LIneChart = ({ data }: { data: ChartDataType[] }) => (
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "transportation",
+        legend: "날짜",
         legendOffset: 36,
         legendPosition: "middle",
       } as AxisProps<ScaleLinear<number, number>> | undefined
@@ -37,7 +36,7 @@ const LIneChart = ({ data }: { data: ChartDataType[] }) => (
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "count",
+        legend: "kg",
         legendOffset: -40,
         legendPosition: "middle",
       } as AxisProps<ScaleLinear<number, number>> | undefined
