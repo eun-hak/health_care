@@ -32,15 +32,15 @@ const Inbody = () => {
     // 새로운 데이터를 생성
 
     const newData = {
-      x: "2023-04-19",
+      x: date,
       y: Number(weight),
     };
     const newBodyFatData = {
-      x: "2023-04-19",
+      x: date,
       y: Number(bodyFat),
     };
     const newSkeletalMuscleData = {
-      x: "2023-04-19",
+      x: date,
       y: Number(skeletalMuscle),
     };
 
