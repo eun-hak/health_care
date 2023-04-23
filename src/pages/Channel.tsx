@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import Nav from "../components/Nav";
 import Signiture from "../components/Signiture";
-import { Container, Wrapper, Container2 } from "../assets/Layout";
-import Data from "../assets/Data";
-import { DATA } from "../assets/Data";
+import { Container, Wrapper, Container2 } from "../components/Layout";
+import Data from "../const/Data";
+import { DATA } from "../const/Data";
 // type DATA = {
 //   id: number;
 //   name: string;
