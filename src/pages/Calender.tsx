@@ -3,7 +3,6 @@ import styled, { css } from "styled-components";
 import Nav from "../components/Nav";
 import Signiture from "../components/Signiture";
 import { Container, Wrapper, Container2 } from "../components/Layout";
-// import Calendar2 from "../components/Calender/Calender2";
 
 const Calender = () => {
   return (

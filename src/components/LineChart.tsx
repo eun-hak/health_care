@@ -78,5 +78,3 @@ const LIneChart = ({ data }: { data: ChartDataType[] }) => (
 );
 
 export default LIneChart;
-
-//as AxisProps<ScaleLinear<number, number>> | undefined
