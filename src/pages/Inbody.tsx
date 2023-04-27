@@ -16,21 +16,16 @@ const Inbody = () => {
   const [bodyFat, setBodyFat] = useState("");
   const [skeletalMuscle, setSkeletalMuscle] = useState("");
 
-  const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
-    // event.preventDefault();
+  const handleSubmit = () => {
     const date = new Date().toISOString().slice(0, 10); // 오늘 날짜를 문자열로 변환
 
     const ChartAllData: ChartDataType[] = JSON.parse(
       localStorage.getItem("ChartData") || "[]"
     );
 
-    // localStorage.setItem(`${date}_weight`, weight);
-    // localStorage.setItem(`${date}_bodyFat`, bodyFat);
-    // localStorage.setItem(`${date}_skeletalMuscle`, skeletalMuscle);
-
     // "2023-04-23"
-    // 새로운 데이터를 생성
 
+    // 새로운 데이터를 생성
     const newData = {
       x: date,
       y: Number(weight),
@@ -50,8 +45,6 @@ const Inbody = () => {
     ChartAllData[2].data.push(newSkeletalMuscleData);
 
     // 변경된 ChartData를 로컬스토리지에 저장
-
-    // `${date}_ChartData`
     localStorage.setItem("ChartData", JSON.stringify(ChartAllData));
     alert("인바디 값이 등록되었습니다!");
   };
