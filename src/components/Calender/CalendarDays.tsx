@@ -1,6 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
+const CalendarDays: React.FC = () => {
+  const weekdays = ["일", "월", "화", "수", "목", "금", "토"];
+
+  return (
+    <WeekdaysContainer>
+      {weekdays.map((weekday) => (
+        <Weekday key={weekday}>{weekday}</Weekday>
+      ))}
+    </WeekdaysContainer>
+  );
+};
+
+export default CalendarDays;
+
 const WeekdaysContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -15,20 +29,7 @@ const WeekdaysContainer = styled.div`
 const Weekday = styled.div`
   display: flex;
   justify-content: center;
+  padding: 0px 12px;
   align-items: center;
   width: calc(100% / 7);
 `;
-
-const CalendarDays: React.FC = () => {
-  const weekdays = ["일", "월", "화", "수", "목", "금", "토"];
-
-  return (
-    <WeekdaysContainer>
-      {weekdays.map((weekday) => (
-        <Weekday key={weekday}>{weekday}</Weekday>
-      ))}
-    </WeekdaysContainer>
-  );
-};
-
-export default CalendarDays;

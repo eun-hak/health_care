@@ -81,7 +81,7 @@ const Calendar2 = () => {
               />
             ))}
             {/* 나머지 칸은 빈 칸으로 채웁니다. */}
-            {week.length < 7 &&
+            {week.length < 8 &&
               Array.from({ length: 7 - week.length }).map((_, i) => (
                 <EmptyCell key={`empty-${i}`} />
               ))}
